@@ -15,7 +15,66 @@
   </head>
   <body>
     <div w3-include-html="navbar.html"></div>
-    <div class="container"></div>
+    <div class="blob-cont">
+      <div class="yellow blob"></div>
+      <div class="red blob"></div>
+      <div class="green blob"></div>
+    </div>
+    <div class="container">
+      <!-- Blobs -->
+
+      <!-- Menu -->
+      <div class="menu">
+        <div class="box">
+          <h1>Learning Materials</h1>
+          <p>
+            This interactive learning module is specifically designed to educate
+            individuals, particularly the elderly, about the dangers of social
+            media ad scams and how to identify them.
+          </p>
+          <div class="items">
+            <ul type="none">
+              <li><img src="" alt="" /></li>
+              <li><img src="" alt="" /></li>
+              <li><img src="" alt="" /></li>
+            </ul>
+          </div>
+        </div>
+        <div class="box">
+          <h1>Quizzes</h1>
+          <p>
+            Test your knowledge and reinforce what you've learned about social
+            media ad scams. This quiz will help you identify the signs of
+            fraudulent ads and ensure you're equipped with the right strategies
+            to stay safe online. Ready to challenge yourself?
+          </p>
+          <div class="items">
+            <ul type="none">
+              <li><img src="" alt="" /></li>
+              <li><img src="" alt="" /></li>
+              <li><img src="" alt="" /></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <svg>
+      <filter id="noiseFilter">
+        <feTurbulence
+          type="fractalNoise"
+          baseFrequency="0.6"
+          stitchTiles="stitch"
+        />
+        <feColorMatrix
+          in="colorNoise"
+          type="matrix"
+          values="1 0 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 1 0"
+        />
+        <feComposite operator="in" in2="SourceGraphic" result="monoNoise" />
+        <feBlend in="SourceGraphic" in2="monoNoise" mode="screen" />
+      </filter>
+    </svg>
     <script src="include.js"></script>
     <script>
       includeHTML();
