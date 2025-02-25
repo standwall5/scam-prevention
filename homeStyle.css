@@ -1,0 +1,42 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --lime: #c8e524;
+  --blue: #83a5f0;
+  --purple: #9955eb;
+  --bg: #fdfef7;
+}
+
+body {
+  background-color: var(--bg);
+  font-family: Inter, serif;
+}
+
+nav {
+  top: 0;
+  position: sticky;
+}
+
+nav ul {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  padding: 1rem 2rem;
+}
+
+nav ul li:first-child {
+  margin-right: auto;
+}
+
+nav img {
+  width: 5rem;
+}
+
+nav a {
+  text-decoration: none;
+  color: black;
+}
