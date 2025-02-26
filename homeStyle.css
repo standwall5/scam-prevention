@@ -8,7 +8,7 @@
   --lime: rgb(200, 229, 36); /* #c8e524 */
   --blue: rgb(131, 165, 240); /* #83a5f0 */
   --purple: rgb(153, 85, 235); /* #9955eb */
-  --bg: rgb(253, 254, 247); /* #fdfef7 */
+  --bg: #f5f5dc; /* #fdfef7 */
 
   --yellow: rgb(237, 183, 77); /* #edb74d */
   --red: rgb(235, 102, 102); /* #eb6666 */
@@ -167,12 +167,16 @@ body::before {
 /* Navigation */
 nav {
   top: 0;
-  position: sticky;
+  position: fixed;
   border-bottom: 2px solid rgb(236, 223, 180);
+  background-color: rgba(253, 254, 247, 0.4);
   backdrop-filter: blur(10px);
+  width: 100%;
+  z-index: 10;
 }
 
 nav ul {
+  z-index: 10;
   display: flex;
   align-items: center;
   gap: 2rem;
@@ -221,6 +225,8 @@ nav ul li:not(:first-child) a:hover {
   height: auto;
   width: auto;
   gap: 4rem;
+  margin-top: 9rem;
+  z-index: 1;
 }
 
 .box {
@@ -292,4 +298,9 @@ nav ul li:not(:first-child) a:hover {
   background-color: var(--blue);
   filter: brightness(0.95);
   filter: saturate(0.6);
+}
+
+@media only screen and (max-width: 600px) {
+  .box {
+  }
 }
