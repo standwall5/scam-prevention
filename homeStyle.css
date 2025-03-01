@@ -8,16 +8,27 @@
   --lime: rgb(200, 229, 36); /* #c8e524 */
   --blue: rgb(131, 165, 240); /* #83a5f0 */
   --purple: rgb(153, 85, 235); /* #9955eb */
-  --bg: #f5f5dc; /* #fdfef7 */
+  --bg: #16101b; /* #fdfef7 */
+  --lightmode: #f5f5dc;
+  --text: #dbdbdb;
+  /* --text: #333333; */
 
   --yellow: rgb(237, 183, 77); /* #edb74d */
   --red: rgb(235, 102, 102); /* #eb6666 */
   --green: rgb(111, 177, 138); /* #6fb18a */
 }
 
+@font-face {
+  font-family: "Geo Sans";
+  src: url("res/fonts/GeosansLight.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
 body {
   background-color: var(--bg);
   font-family: Inter, serif;
+  color: var(--text);
 }
 
 body::before,
@@ -52,7 +63,7 @@ body::before {
   right: 0;
   left: 40rem;
   top: 10rem;
-  position: absolute;
+  position: sticky;
 }
 
 .blob {
@@ -169,10 +180,15 @@ nav {
   top: 0;
   position: fixed;
   border-bottom: 2px solid rgb(236, 223, 180);
-  background-color: rgba(253, 254, 247, 0.4);
+  background-color: rgba(109, 109, 109, 0.1);
   backdrop-filter: blur(10px);
   width: 100%;
   z-index: 10;
+}
+
+nav::before {
+  content: "";
+  mask-image: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0));
 }
 
 nav ul {
@@ -185,6 +201,21 @@ nav ul {
 
 nav ul li:first-child {
   margin-right: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+  font-family: "Geo Sans";
+  letter-spacing: 4px;
+  font-size: 2rem;
+  transition: 0.3s;
+}
+
+#brand-icon a {
+  color: #93e732;
+}
+#brand-icon span {
+  color: var(--purple);
 }
 
 nav img {
@@ -201,8 +232,11 @@ nav ul li:not(:first-child) a:hover {
   border-bottom: 2px solid var(--purple);
 }
 
-#brand-icon img:hover {
+#brand-icon:hover {
   transform: scale(1.1);
+}
+
+#brand-icon:hover img {
   filter: drop-shadow(0px 0px 10px #9955eba9);
 }
 
@@ -217,27 +251,46 @@ nav ul li:not(:first-child) a:hover {
   display: flex;
   align-items: center;
   justify-content: center;
+  flex-wrap: wrap;
+  height: auto;
+  margin-top: -20rem;
 }
 
 .menu {
   display: flex;
   flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
   height: auto;
   width: auto;
   gap: 4rem;
-  margin-top: 9rem;
   z-index: 1;
 }
 
 .box {
   width: 50rem;
-  height: 30rem;
+  height: 35rem;
   transition: 0.3s;
   position: relative;
-  padding: 3rem;
+  padding: 3rem 3rem 2rem 3rem;
   display: flex;
   flex-direction: column;
+  justify-content: space-around;
   gap: 3rem;
+  border-radius: 2rem;
+
+  /* border: 10px solid rgba(255, 255, 255, 0.5);
+  border-radius: 1rem; */
+}
+
+.box::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 2rem;
+  filter: url(#noiseFilter);
+  opacity: 0.7; /* Only the background becomes transparent */
+  z-index: -1;
 }
 
 .box p {
@@ -245,30 +298,26 @@ nav ul li:not(:first-child) a:hover {
 }
 
 .box:nth-child(1):before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background-color: var(--lime);
-  border-radius: 1rem;
-
-  opacity: 0.7; /* Only the background becomes transparent */
-  z-index: -1;
+  box-shadow: inset 0px 0px 20rem var(--lime);
 }
 
 .box:nth-child(2):before {
-  content: "";
-  position: absolute;
-  inset: 0;
   background-color: var(--blue);
-  border-radius: 1rem;
+}
 
-  opacity: 0.7; /* Only the background becomes transparent */
-  z-index: -1;
+.box:nth-child(3):before {
+  background-color: var(--purple);
+}
+
+.box:nth-child(4):before {
+  background-color: gray;
 }
 
 .box:hover {
   transform: scale(1.05);
-  filter: drop-shadow(0px 0px 15px white);
+  filter: drop-shadow();
+  box-shadow: 0px 0px 15px white;
+  cursor: pointer;
 }
 
 /* Items in boxes */
