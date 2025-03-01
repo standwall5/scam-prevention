@@ -10,8 +10,8 @@
   --purple: rgb(153, 85, 235); /* #9955eb */
   --bg: #16101b; /* #fdfef7 */
   --lightmode: #f5f5dc;
-  --text: #dbdbdb;
-  /* --text: #333333; */
+  /* --text: #dbdbdb; */
+  --text: #141414;
 
   --yellow: rgb(237, 183, 77); /* #edb74d */
   --red: rgb(235, 102, 102); /* #eb6666 */
@@ -28,7 +28,7 @@
 body {
   background-color: var(--bg);
   font-family: Inter, serif;
-  color: var(--text);
+  /* color: var(--text); */
 }
 
 body::before,
@@ -179,16 +179,42 @@ body::before {
 nav {
   top: 0;
   position: fixed;
-  border-bottom: 2px solid rgb(236, 223, 180);
-  background-color: rgba(109, 109, 109, 0.1);
-  backdrop-filter: blur(10px);
+  /* border-bottom: 2px solid rgb(236, 223, 180); */
+
+  /* background-color: rgba(109, 109, 109, 0.1); */
   width: 100%;
   z-index: 10;
+  color: white;
 }
 
-nav::before {
-  content: "";
-  mask-image: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0));
+.backdrop {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  opacity: 1;
+  padding-top: 10rem;
+
+  /*  where the real magic happens  */
+  backdrop-filter: blur(30px);
+  -webkit-backdrop-filter: blur(30px);
+
+  background: rgba(225, 225, 225, 0.05);
+  background-color: rgba(66, 61, 112, 0.322);
+
+  mask-image: linear-gradient(
+    rgb(0, 0, 0) 50%,
+    rgba(0, 0, 0, 0.8) 70%,
+    rgba(0, 0, 0, 0) 100%
+  );
+
+  -webkit-mask-image: linear-gradient(
+    rgb(0, 0, 0) 50%,
+    rgba(0, 0, 0, 0.8) 70%,
+    rgba(0, 0, 0, 0) 100%
+  );
+  inset: -1rem 0;
 }
 
 nav ul {
@@ -197,6 +223,15 @@ nav ul {
   align-items: center;
   gap: 2rem;
   padding: 1rem 3rem;
+}
+
+nav a {
+  text-decoration: none;
+  color: white;
+}
+
+nav ul li:not(:first-child, :nth-child(4)) {
+  font-size: 1.2rem;
 }
 
 nav ul li:first-child {
@@ -223,13 +258,8 @@ nav img {
   transition: 0.3s;
 }
 
-nav a {
-  text-decoration: none;
-  color: black;
-}
-
-nav ul li:not(:first-child) a:hover {
-  border-bottom: 2px solid var(--purple);
+nav ul li:not(:first-child, :nth-child(4)) a:hover {
+  border-bottom: 3px solid var(--purple);
 }
 
 #brand-icon:hover {
@@ -278,6 +308,7 @@ nav ul li:not(:first-child) a:hover {
   justify-content: space-around;
   gap: 3rem;
   border-radius: 2rem;
+  color: var(--text);
 
   /* border: 10px solid rgba(255, 255, 255, 0.5);
   border-radius: 1rem; */
@@ -288,7 +319,7 @@ nav ul li:not(:first-child) a:hover {
   position: absolute;
   inset: 0;
   border-radius: 2rem;
-  filter: url(#noiseFilter);
+  /* filter: url(#noiseFilter); */
   opacity: 0.7; /* Only the background becomes transparent */
   z-index: -1;
 }
@@ -298,7 +329,7 @@ nav ul li:not(:first-child) a:hover {
 }
 
 .box:nth-child(1):before {
-  box-shadow: inset 0px 0px 20rem var(--lime);
+  background-color: var(--lime);
 }
 
 .box:nth-child(2):before {
