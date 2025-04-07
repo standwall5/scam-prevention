@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Login</title>
+    <link
+      rel="shortcut icon"
+      href="res/images/logoModuleFinal.png"
+      type="image/x-icon"
+    />
+    <link rel="stylesheet" href="index.css" />
+    <link rel="stylesheet" href="blob.css" />
+  </head>
+  <body>
+    <nav>
+      <ul type="none">
+        <li id="brand-icon">
+          <a href="#"
+            ><img src="res/images/logoModuleFinal.png" alt="" />
+            <h1>Sif<span>thr</span></h1></a
+          >
+        </li>
+        <li><a href="#">Support for Scams</a></li>
+      </ul>
+      <div class="backdrop"></div>
+    </nav>
+
+    <div class="blob-wrapper">
+      <div class="blob-cont">
+        <div class="yellow blob"></div>
+        <div class="red blob"></div>
+        <div class="green blob"></div>
+      </div>
+    </div>
+    <div class="container">
+      <div class="content">
+        <h1>Identifying scams in social media - one at a time.</h1>
+        <div class="box">
+          <img
+            src="res/images/premium_photo-1663075924383-fd210cbf6bde.png"
+            alt=""
+            width="500px"
+            height="500px"
+            id="imageLogin"
+          />
+          <div class="login-box">
+            <button></button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <svg id="filterSvg">
+      <filter id="noiseFilter">
+        <feTurbulence
+          type="fractalNoise"
+          baseFrequency=".6"
+          stitchTiles="stitch"
+        />
+        <feColorMatrix
+          in="colorNoise"
+          type="matrix"
+          values="1 0 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 1 0"
+        />
+        <feComposite operator="in" in2="SourceGraphic" result="monoNoise" />
+        <feBlend in="SourceGraphic" in2="monoNoise" mode="screen" />
+      </filter>
+    </svg>
+  </body>
+</html>

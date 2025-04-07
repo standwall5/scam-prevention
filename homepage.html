@@ -16,6 +16,7 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="homeStyle.css" />
+    <link rel="stylesheet" href="blob.css" />
   </head>
   <body>
     <div w3-include-html="navbar.html"></div>
@@ -94,7 +95,7 @@
       </div>
     </div>
 
-    <svg>
+    <svg id="filterSvg">
       <filter id="noiseFilter">
         <feTurbulence
           type="fractalNoise"

@@ -1,0 +1,14 @@
+{
+    "name": "johnp/scam-prevention",
+    "description": "sifthr capstone project",
+    "type": "project",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "standwall5",
+            "email": "johnpatricksalen890@gmail.com"
+        }
+    ],
+    "minimum-stability": "stable",
+    "require": {}
+}
