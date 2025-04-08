@@ -224,6 +224,8 @@ nav ul li:not(:first-child, :nth-child(4)) {
 
 nav ul li:first-child {
   margin-right: auto;
+}
+.brand-icon {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -234,7 +236,7 @@ nav ul li:first-child {
   transition: 0.3s;
 }
 
-#brand-icon a {
+.brand-icon a {
   color: #93e732;
   display: flex;
   align-items: center;
@@ -242,11 +244,16 @@ nav ul li:first-child {
   gap: 2rem;
   line-height: 1rem;
 }
-#brand-icon span {
+.brand-icon span {
   color: var(--purple);
 }
 
-nav img {
+.brand-icon h1,
+.brand-icon span {
+  font-weight: bold;
+}
+
+.brand-icon img {
   width: 5rem;
   transition: 0.3s;
 }
@@ -255,14 +262,35 @@ nav ul li:not(:first-child, :nth-child(4)) a:hover {
   border-bottom: 3px solid var(--purple);
 }
 
-#brand-icon:hover {
+.brand-icon:hover {
   transform: scale(1.1);
 }
 
-#brand-icon:hover img {
+.brand-icon:hover img {
   filter: drop-shadow(0px 0px 10px #9955eba9);
 }
 
 #user-icon img {
   width: 4rem;
+}
+
+footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  /* gap: 5rem; */
+  margin-top: 10rem;
+  height: 10rem;
+  padding: 0 5rem 0 5rem;
+}
+
+footer a {
+  text-decoration: none;
+}
+
+.footer-div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
 }

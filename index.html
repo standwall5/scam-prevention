@@ -16,7 +16,7 @@
   <body>
     <nav>
       <ul type="none">
-        <li id="brand-icon">
+        <li class="brand-icon">
           <a href="#"
             ><img src="res/images/logoModuleFinal.png" alt="" />
             <h1>Sif<span>thr</span></h1></a
@@ -36,17 +36,44 @@
     </div>
     <div class="container">
       <div class="content">
-        <h1>Identifying scams in social media - one at a time.</h1>
         <div class="box">
-          <img
-            src="res/images/premium_photo-1663075924383-fd210cbf6bde.png"
-            alt=""
-            width="500px"
-            height="500px"
-            id="imageLogin"
-          />
+          <div class="cardContainer">
+            <h1>Identifying scams in social media - one at a time.</h1>
+
+            <div class="card">
+              <img
+                src="res/images/premium_photo-1663075924383-fd210cbf6bde.png"
+                alt=""
+                width="500px"
+                height="500px"
+                id="imageLogin"
+              />
+              <div class="cardContent">
+                <h2>Be prepared - be ready</h2>
+                <p>
+                  In this website, awareness about social media scams is spread.
+                  We educate users on recognizing fraud and empowering them to
+                  avoid scams, creating a safer space for everyone, especially
+                  the elderly.
+                </p>
+              </div>
+            </div>
+          </div>
           <div class="login-box">
-            <button></button>
+            <button id="login">Login</button>
+            <button id="signup">Sign-up</button>
+            <button id="guest">Browse as Guest</button>
+            <form id="loginForm" action="login.php">
+              <label for="email"
+                >E-mail
+                <input type="email" />
+              </label>
+              <label for="password"
+                >Password
+                <input type="password" />
+              </label>
+            </form>
+            <!-- <button></button> -->
           </div>
         </div>
       </div>
@@ -67,5 +94,29 @@
         <feBlend in="SourceGraphic" in2="monoNoise" mode="screen" />
       </filter>
     </svg>
+    <footer>
+      <div class="footer-div">
+        <h1>Members</h1>
+        <ul type="none">
+          <li>John Patrick Salen</li>
+          <li>Carl Jaizon Rey Mercado</li>
+          <li>Alih Marfil</li>
+        </ul>
+      </div>
+      <div class="footer-div">
+        <h1>Made in Compliance with</h1>
+        <p>
+          Capstone Project I in <br />
+          The Polytechnic University of the Philippines
+        </p>
+      </div>
+      <div class="brand-icon">
+        <a href="#"
+          ><img src="res/images/logoModuleFinal.png" alt="" />
+          <h1>Sif<span>thr</span></h1></a
+        >
+      </div>
+    </footer>
+    <script src="index.js"></script>
   </body>
 </html>
