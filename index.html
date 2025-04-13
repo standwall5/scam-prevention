@@ -63,16 +63,50 @@
             <button id="login">Login</button>
             <button id="signup">Sign-up</button>
             <button id="guest">Browse as Guest</button>
-            <form id="loginForm" action="login.php">
-              <label for="email"
-                >E-mail
-                <input type="email" />
-              </label>
-              <label for="password"
-                >Password
-                <input type="password" />
-              </label>
-            </form>
+            <div id="loginFormContainer">
+              <form id="loginForm" method="post" action="login.php">
+                <h1>Login</h1>
+                <p id="closeLogin">X</p>
+                <label for="email"
+                  >E-mail
+                  <input type="email" name="email" />
+                </label>
+                <label for="password" id="password"
+                  >Password
+                  <input type="password" id="passwordInput" name="password" />
+                  <img id="showPassword" src="res/images/eye.png" alt="" />
+                </label>
+                <button type="submit">Login</button>
+              </form>
+
+              <form id="signupForm" method="post" action="signup.php">
+                <h1>Sign-up</h1>
+                <p id="closeSignup">X</p>
+                <label for="name"
+                  >E-mail
+                  <input type="text" name="name" />
+                </label>
+                <label for="email"
+                  >E-mail
+                  <input type="email" name="email" />
+                </label>
+                <label for="password" id="password"
+                  >Password
+                  <input type="password" id="passwordInput" name="password" />
+                  <img id="showPassword" src="res/images/eye.png" alt="" />
+                </label>
+                <label for="repeat-password" id="password"
+                  >Password
+                  <input
+                    type="password"
+                    id="passwordInput"
+                    name="repeat-password"
+                  />
+                </label>
+                <button type="submit">Login</button>
+              </form>
+            </div>
+
             <!-- <button></button> -->
           </div>
         </div>

@@ -16,7 +16,7 @@
 
 body {
   background-color: var(--bg);
-  font-family: Inter, serif;
+  font-family: "Inter", serif;
   /* color: var(--text); */
 }
 

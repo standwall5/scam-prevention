@@ -9,7 +9,6 @@ $uri = "mongodb+srv://johnpatricksalen890:mongoDbKrab1@sifthr.mxjihsg.mongodb.ne
 // Create a MongoDB client
 try {
     $client = new MongoDB\Client($uri);
-    echo "MongoDB connection established successfully!";
 } catch (MongoDB\Driver\Exception\Exception $e) {
     // Handle connection error
     echo "MongoDB connection failed: " . $e->getMessage();
