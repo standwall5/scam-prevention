@@ -1,3 +1,9 @@
+<?php
+    session_start();
+    $name  = $_SESSION['name'];
+    $email = $_SESSION['email'];
+?>
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -31,7 +37,7 @@
       <!-- Menu -->
       <div class="menu">
         <div class="box">
-          <h1>Learning Materials</h1>
+          <h1>Learning Materials                                 <?php echo $name ?></h1>
           <p>
             This interactive learning module is specifically designed to educate
             individuals, particularly the elderly, about the dangers of social

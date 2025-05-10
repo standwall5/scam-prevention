@@ -1,6 +1,23 @@
 /* Blobs by Juxtopposed */
 /* https://codepen.io/Juxtopposed/pen/BaqLEQY */
 
+:root {
+  --lime: rgb(200, 229, 36); /* #c8e524 */
+  --blue: rgb(131, 165, 240); /* #83a5f0 */
+  --purple: rgb(153, 85, 235); /* #9955eb */
+  --bgdark: #16101b;
+  /* #fdfef7 */
+  --bg: #f5f5dc;
+  --text-dark: #dbdbdb;
+  --text: #141414;
+  --nav-dark: rgba(66, 61, 112, 0.322);
+  --nav: rgba(166, 226, 110, 0.322);
+
+  --yellow: rgb(237, 183, 77); /* #edb74d */
+  --red: rgb(235, 102, 102); /* #eb6666 */
+  --green: rgb(111, 177, 138); /* #6fb18a */
+}
+
 * {
   padding: 0;
   margin: 0;
@@ -18,6 +35,10 @@ body {
   background-color: var(--bg);
   font-family: "Inter", serif;
   /* color: var(--text); */
+}
+
+body.dark {
+  background-color: var(--bgdark);
 }
 
 body::before,
@@ -205,6 +226,10 @@ nav {
   inset: -1rem 0;
 }
 
+.backdrop.dark {
+  background-color: var(--nav-dark);
+}
+
 nav ul {
   z-index: 10;
   display: flex;
@@ -215,10 +240,18 @@ nav ul {
 
 nav a {
   text-decoration: none;
+}
+
+.nav-link {
+  text-decoration: none;
   color: var(--text);
 }
 
-nav ul li:not(:first-child, :nth-child(4)) {
+.nav-link.dark {
+  color: var(--text-dark);
+}
+
+nav ul li:not(:first-child, :nth-child(5)) {
   font-size: 1.2rem;
 }
 
@@ -258,7 +291,7 @@ nav ul li:first-child {
   transition: 0.3s;
 }
 
-nav ul li:not(:first-child, :nth-child(4)) a:hover {
+nav ul li:not(:first-child, :nth-child(5)) a:hover {
   border-bottom: 3px solid var(--purple);
 }
 
@@ -293,4 +326,8 @@ footer a {
   align-items: center;
   justify-content: center;
   gap: 2rem;
+}
+
+footer.dark {
+  color: var(--text-dark);
 }

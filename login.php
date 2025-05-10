@@ -10,12 +10,23 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     // Find user by email
     $user = $collection->findOne(['email' => $email]);
 
-    if ($user && $password == $user['password']) {
+    if ($user && password_verify($password, $user['password'])) {
         // Login successful
         $_SESSION['email'] = $user['email'];
-        $_SESSION['name']  = $user['name'];
+        $fullName          = $user['name'];
+        $age               = $user['age'];
+        $nameArray         = explode(' ', $fullName);
+        if (count($nameArray) > 3) {                     // If their name is Gregory Extra H. House (only taking the first name)
+            $firstNameParts = array_slice($nameArray, 0, 2); // Get the first two parts
+            $firstName      = implode(" ", $firstNameParts);
+        } else if (count($nameArray) == 3) {
+            $firstName = array_pop($nameArray);
+        }
+
+        $_SESSION['name']     = $firstName;
+        $_SESSION['fullName'] = $fullName;
         // Or wherever your homepage is
-        header("Location: test.php");
+        header("Location: homepage.php");
         exit;
     } else {
         echo "Invalid email or password.";

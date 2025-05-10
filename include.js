@@ -29,3 +29,12 @@ function includeHTML() {
     }
   }
 }
+
+let backdrop = document.querySelector(".backdrop");
+backdrop.addEventListener("click", function () {
+  if (backdrop.classList.contains("dark")) {
+    backdrop.classList.remove("dark");
+  } else {
+    backdrop.classList.add("dark");
+  }
+});

@@ -4,9 +4,9 @@
   --purple: rgb(153, 85, 235); /* #9955eb */
   /* --bg: #16101b; #fdfef7 */
   --bg: #f5f5dc;
-  --textlight: #dbdbdb;
+  --text-dark: #dbdbdb;
   --text: #141414;
-  /* --nav: rgba(66, 61, 112, 0.322); */
+  --nav-dark: rgba(66, 61, 112, 0.322);
   --nav: rgba(166, 226, 110, 0.322);
 
   --yellow: rgb(237, 183, 77); /* #edb74d */
@@ -142,7 +142,7 @@ h1 {
   /* box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.5); */
   box-shadow: 0 1rem 0 var(--lime);
   border-radius: 1rem;
-  z-index: 5;
+  z-index: 1000;
 }
 
 #loginFormContainer label {
@@ -153,7 +153,9 @@ h1 {
 
 #loginFormContainer.show {
   width: 30rem;
-  height: 40rem;
+  /* height: 40rem; */
+  height: auto;
+  padding: 2rem;
 }
 
 #closeLogin,
@@ -172,7 +174,6 @@ h1 {
 #loginForm,
 #signupForm {
   transition: 0.25s;
-
   display: none;
   flex-direction: column;
   align-items: center;
@@ -181,19 +182,21 @@ h1 {
   visibility: hidden;
 }
 
-#loginForm.show {
+#loginForm.show,
+#signupForm.show {
   opacity: 1;
   visibility: visible;
 }
 
 #loginForm input,
-#loginForm input {
+#signupForm input {
   width: 20rem;
   height: 2rem;
   padding: 1rem;
 }
 
-#loginForm input:focus {
+#loginForm input:focus,
+#signupForm input:focus {
   outline: none;
 }
 
