@@ -1,10 +1,6 @@
-# Project Documentation
-
 ## 📄 Adding a New Page
 
-To add a new page to this website, follow these steps:
-
-### 1. Use `template.html` for creating new pages
+### Use `template.html` for creating new pages
 
 ```html
 <!DOCTYPE html>
