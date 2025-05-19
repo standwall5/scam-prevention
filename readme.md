@@ -1,10 +1,6 @@
-# Project Documentation
-
 ## 📄 Adding a New Page
 
-To add a new page to this website, follow these steps:
-
-### 1. Use `template.html` for creating new pages
+### Use `template.html` for creating new pages
 
 ```html
 <!DOCTYPE html>
@@ -23,13 +19,12 @@ To add a new page to this website, follow these steps:
     <link rel="stylesheet" href="blob.css" />
 
     <!-- Custom CSS link here -->
-
     <title>Document</title>
   </head>
 
   <body>
     <!-- Dynamically load the navigation bar -->
-    <div w3-include-html="nav.html"></div>
+    <div w3-include-html="navbar.html"></div>
 
     <!-- Animation of background-->
     <div class="blob-cont">
@@ -44,6 +39,9 @@ To add a new page to this website, follow these steps:
 
     <!-- Script for the nav dynamic loading -->
     <script src="include.js"></script>
+    <script>
+      includeHTML();
+    </script>
   </body>
 </html>
 ```
