@@ -25,6 +25,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
         $_SESSION['name']     = $firstName;
         $_SESSION['fullName'] = $fullName;
+        $_SESSION['age'] = $age;
         // Or wherever your homepage is
         header("Location: homepage.php");
         exit;

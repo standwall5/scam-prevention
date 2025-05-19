@@ -2,14 +2,16 @@
 // db.php - Handles MongoDB connection
 
 require 'vendor/autoload.php'; // Include Composer's autoloader
+$dotenv = Dotenv\Dotenv::createImmutable(__DIR__);
+$dotenv->load();
 
 // MongoDB connection URI
-$uri = "mongodb+srv://johnpatricksalen890:mongoDbKrab1@sifthr.mxjihsg.mongodb.net/"; // Default MongoDB URI (change if needed)
+$uri = $_ENV['DB_URI']; // Default MongoDB URI (change if needed)
 
 // Create a MongoDB client
 try {
     $client = new MongoDB\Client($uri);
-} catch (MongoDB\Driver\Exception\Exception $e) {
+} catch (Exception $e) {
     // Handle connection error
     echo "MongoDB connection failed: " . $e->getMessage();
     exit; // Stop execution if connection fails
