@@ -8,11 +8,12 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     $password = $_POST['password'] ?? '';
 
     // Find user by email
-    $user = $collection->findOne(['email' => $email]);
+    $user = $collection->findOne(['email' => $email]); // finds email, if true, proceed to password verification
 
     if ($user && password_verify($password, $user['password'])) {
         // Login successful
         $_SESSION['email'] = $user['email'];
+        $_SESSION['isAdmin'] = $user['isAdmin']; // returns boolean
         $fullName          = $user['name'];
         $age               = $user['age'];
         $nameArray         = explode(' ', $fullName);

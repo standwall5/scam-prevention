@@ -17,6 +17,7 @@
 
     <!-- Background Styling -->
     <link rel="stylesheet" href="blob.css" />
+    <link rel="stylesheet" href="style.css" />
 
     <!-- Custom CSS link here -->
     <title>Document</title>

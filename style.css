@@ -1,0 +1,47 @@
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  height: 100vh;
+}
+
+/******************************************/
+/*               BOX STYLING               */
+/******************************************/
+
+.box {
+  width: 50rem;
+  height: 35rem;
+  transition: 0.3s;
+  position: relative;
+  padding: 3rem 3rem 2rem 3rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  gap: 3rem;
+  border-radius: 2rem;
+  color: var(--text);
+
+  /* border: 10px solid rgba(255, 255, 255, 0.5);
+  border-radius: 1rem; */
+}
+
+.box::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 2rem;
+  /* filter: url(#noiseFilter); */
+  opacity: 0.7; /* Only the background becomes transparent */
+  z-index: -1;
+}
+
+.box p {
+  font-size: 1.5rem;
+}
+
+/* For coloring each box in order (nth-child) */
+.box:nth-child(1):before {
+  background-color: var(--lime);
+}
